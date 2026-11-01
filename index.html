@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>scienceteam</title>
+<style>
+:root{--bg:#f2f5fb;--sf:#fff;--tx:#0e1b3d;--mu:#62708f;--bd:#dce3f0;--ac:#0b8a86;--ac2:#6d4aff;--acs:#e3f6f5;--nv1:#0a1a3f;--nv2:#12306b;box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){--bg:#0a1124;--sf:#121b36;--tx:#e8eefc;--mu:#93a1c4;--bd:#25325a;--ac:#2dd4cc;--ac2:#9a82ff;--acs:#12304a;color-scheme:dark}}
+:root[data-theme="dark"]{--bg:#0a1124;--sf:#121b36;--tx:#e8eefc;--mu:#93a1c4;--bd:#25325a;--ac:#2dd4cc;--ac2:#9a82ff;--acs:#12304a;color-scheme:dark}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--tx);font-family:Tahoma,"Segoe UI",Arial,sans-serif;font-size:15px}
+button,input,textarea{font:inherit;color:inherit}
+.app{display:flex;min-height:100vh}
+aside{width:236px;background:linear-gradient(180deg,var(--nv1),var(--nv2));color:#fff;padding:18px 14px;display:flex;flex-direction:column;gap:6px;flex-shrink:0}
+.logo{display:flex;align-items:center;gap:8px;font-weight:700;font-size:18px;letter-spacing:.4px;margin-bottom:10px}
+.logo .dna{width:26px;height:34px}
+.lbl{color:#8fa6d8;font-size:12px;margin-top:8px}
+.team{display:flex;justify-content:space-between;align-items:center;padding:10px;border:1px solid transparent;border-radius:10px;cursor:pointer;background:none;color:#d6e2ff;width:100%;text-align:start}
+.team:hover{background:rgba(255,255,255,.07)}.team.on{background:rgba(255,255,255,.13);border-color:#2dd4cc;color:#fff}
+aside .dna{flex:1;min-height:160px;opacity:.95;margin-top:8px}
+.btn{border:1px solid var(--bd);background:var(--sf);padding:8px 14px;border-radius:10px;cursor:pointer;text-decoration:none;display:inline-block;color:var(--tx)}
+.btn.p{background:linear-gradient(135deg,var(--ac),var(--ac2));border-color:transparent;color:#fff}
+.btn.dash{border-style:dashed;background:none;color:#a9bde8;border-color:rgba(255,255,255,.3)}
+main{flex:1;min-width:0;display:flex;flex-direction:column}
+header{display:flex;justify-content:space-between;align-items:center;gap:12px;flex-wrap:wrap;padding:12px 22px;background:var(--sf);border-bottom:1px solid var(--bd)}
+.url{display:inline-flex;gap:6px;align-items:center;background:var(--bg);border:1px solid var(--bd);border-radius:99px;padding:6px 14px;font-size:13px;direction:ltr;color:var(--mu)}
+.url b{color:var(--tx)}
+.tag{font-size:12px;padding:3px 9px;border-radius:99px}
+.own{background:var(--acs);color:var(--ac);border:1px solid var(--ac)}
+.hid{background:var(--bg);color:var(--mu);border:1px dashed var(--bd)}
+.content{padding:22px;max-width:1040px;width:100%}
+.hero{background:linear-gradient(120deg,var(--nv1),var(--nv2) 60%,#3b2a8f);color:#fff;border-radius:16px;padding:18px 24px;display:flex;justify-content:space-between;align-items:center;overflow:hidden;margin-bottom:18px;gap:12px}
+.hero h2{margin:0 0 4px;font-size:20px}.hero p{margin:0;color:#b8c8f0;font-size:13.5px}
+.hero .dna{width:90px;height:110px;flex-shrink:0}
+.stats{display:flex;gap:12px;flex-wrap:wrap;margin-bottom:18px}
+.stat{flex:1;min-width:130px;background:var(--sf);border:1px solid var(--bd);border-radius:12px;padding:12px}
+.stat b{font-size:22px;display:block;color:var(--ac)}.stat span{color:var(--mu);font-size:12px}
+.bar{display:flex;gap:10px;align-items:center;margin-bottom:14px;flex-wrap:wrap}.bar input{flex:1;min-width:160px}
+input,textarea{background:var(--sf);border:1px solid var(--bd);border-radius:10px;padding:9px 11px;width:100%}
+.grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(270px,1fr));gap:14px}
+.card{background:var(--sf);border:1px solid var(--bd);border-top:4px solid;border-radius:12px;padding:14px;display:flex;flex-direction:column;gap:10px}
+.card h3{margin:0;font-size:16px}.card p{margin:0;color:var(--mu);font-size:13.5px;line-height:1.7}
+.row{display:flex;justify-content:space-between;align-items:center;gap:8px}
+.file{display:flex;align-items:center;gap:10px;border:1px solid var(--bd);border-radius:10px;padding:8px 10px;background:var(--bg)}
+.ico{width:32px;height:38px;border:1.5px solid;border-radius:5px;display:grid;place-items:center;font-size:9px;font-weight:700;flex-shrink:0}
+.file small{color:var(--mu);display:block}
+.gate{margin:50px auto;max-width:360px;background:var(--sf);border:1px solid var(--bd);border-radius:16px;padding:26px;text-align:center;display:flex;flex-direction:column;gap:12px}
+.login{margin:40px auto;max-width:640px;display:flex;border-radius:18px;overflow:hidden;border:1px solid var(--bd);background:var(--sf)}
+.lside{background:linear-gradient(160deg,var(--nv1),#3b2a8f);color:#fff;padding:24px;display:flex;flex-direction:column;align-items:center;gap:10px;width:210px;text-align:center}
+.lside .dna{width:140px;height:240px}
+.lform{flex:1;padding:28px;display:flex;flex-direction:column;gap:12px;justify-content:center}
+.err{color:#d6336c;font-size:13px;min-height:18px}
+.modal{position:fixed;inset:0;background:rgba(5,10,30,.55);display:none;place-items:center;padding:16px;z-index:20}.modal.show{display:grid}
+.box{background:var(--sf);border-radius:16px;padding:20px;width:100%;max-width:420px;display:flex;flex-direction:column;gap:10px;max-height:90vh;overflow:auto}
+.drop{border:2px dashed var(--bd);border-radius:12px;padding:18px;text-align:center;color:var(--mu);cursor:pointer}
+.empty{text-align:center;color:var(--mu);padding:40px}
+.tw{overflow-x:auto;margin-bottom:22px}table{width:100%;border-collapse:collapse;background:var(--sf);border:1px solid var(--bd)}
+th,td{padding:10px;text-align:start;border-bottom:1px solid var(--bd);font-size:14px;white-space:nowrap}th{color:var(--mu);font-weight:400;font-size:12px}h4{margin:0 0 8px}
+.app.adm aside{display:none}
+@media(max-width:720px){.app{flex-direction:column}aside{width:100%;flex-direction:row;flex-wrap:wrap;align-items:center}aside .dna,.lbl{display:none}.team{width:auto}.login{flex-direction:column}.lside{width:auto;flex-direction:row}.lside .dna{height:90px;width:60px}}
+</style>
+</head>
+<body>
+<div class="app" id="app">
+  <aside>
+    <div class="logo"><div class="dna" data-w="26" data-h="34"></div>scienceteam</div>
+    <div class="lbl">الفرق</div>
+    <div id="teams" style="display:contents"></div>
+    <button class="btn dash" id="addT" style="display:none" onclick="openM('mTeam')">+ إضافة فريق جديد</button>
+    <div class="dna" data-w="120" data-h="260"></div>
+  </aside>
+  <main>
+    <header>
+      <div class="row" style="gap:12px"><span class="url">🔒 <b>scienceteam</b><span id="path"></span></span><b id="tName"></b> <span class="tag hid" id="tState"></span> <span class="tag own" id="dbTag"></span></div>
+      <div id="hbtn"></div>
+    </header>
+    <div class="content" id="view"></div>
+  </main>
+</div>
+
+<div id="toast" style="display:none;position:fixed;bottom:20px;inset-inline:0;margin:auto;width:max-content;max-width:90%;background:var(--nv1);color:#fff;padding:10px 16px;border-radius:10px;z-index:30"></div>
+<div class="modal" id="mIdea"><div class="box">
+  <h3 style="margin:0">إضافة فكرة</h3>
+  <input id="iT" placeholder="عنوان الفكرة">
+  <textarea id="iD" rows="3" placeholder="اشرح فكرتك باختصار"></textarea>
+  <input id="iN" placeholder="اسمك (يظهر للمدير فقط)">
+  <div class="drop" onclick="document.getElementById('iF').click()" id="dz">⬆ اضغط لرفع ملف (حتى 10 MB)</div>
+  <input type="file" id="iF" hidden onchange="dz.textContent='✔ '+this.files[0].name">
+  <div class="row" style="margin-top:6px"><button class="btn" onclick="closeM('mIdea')">إلغاء</button><button class="btn p" id="pub" onclick="addIdea()">نشر</button></div>
+</div></div>
+<div class="modal" id="mTeam"><div class="box">
+  <h3 style="margin:0">إضافة فريق</h3>
+  <input id="nT" placeholder="اسم الفريق">
+  <input id="nP" placeholder="كلمة مرور الدخول للفريق">
+  <div class="row" style="margin-top:6px"><button class="btn" onclick="closeM('mTeam')">إلغاء</button><button class="btn p" onclick="addTeam()">إنشاء</button></div>
+</div></div>
+
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2.45.4/dist/umd/supabase.min.js"></script>
+<script>
+const SUPABASE_URL='PASTE_PROJECT_URL_HERE';
+const SUPABASE_ANON_KEY='PASTE_ANON_KEY_HERE';
+const C=['#ff4d8d','#ffb020','#14c8b8','#7c5cff'];
+let sb=null,session=null,teams=[],cur=0,ideas=[],all=[],ok={},pass={},busy=false,ready=false,ph=0;
+const $=id=>document.getElementById(id);
+const esc=s=>String(s==null?'':s).replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
+const toast=t=>{const e=$('toast');e.textContent=t;e.style.display='block';setTimeout(()=>e.style.display='none',3500)};
+const fmt=b=>!b?'':b>1048576?(b/1048576).toFixed(1)+' MB':Math.ceil(b/1024)+' KB';
+const ext=n=>n&&n.includes('.')?n.split('.').pop().toUpperCase().slice(0,4):'FILE';
+const fc=x=>x=='PDF'?C[0]:/^DOC/.test(x)?C[3]:/^(IMG|PNG|JPG|JPEG|WEBP|GIF)$/.test(x)?C[1]:C[2];
+const isPath=()=>/\/admin\/?$/.test(location.pathname);
+const isAdm=()=>location.hash==='#admin'||isPath();
+function openM(i){$(i).classList.add('show')}function closeM(i){$(i).classList.remove('show')}
+function dna(w,h,ph){const m=48,A=w*.32,cx=w/2;let p1='',p2='',r='',n='';
+ for(let j=0;j<=m;j++){const y=(h*j/m).toFixed(1),t=ph+j/m*13.8,s=Math.sin(t),z=Math.cos(t),x1=(cx+A*s).toFixed(1),x2=(cx-A*s).toFixed(1);
+  p1+=(j?'L':'M')+x1+','+y;p2+=(j?'L':'M')+x2+','+y;
+  if(j%3==0){const a=(j/3)%4,ca=C[a],cb=C[a^1];
+   r+=`<line x1="${x1}" y1="${y}" x2="${cx}" y2="${y}" stroke="${ca}" stroke-width="3" stroke-linecap="round"/><line x1="${cx}" y1="${y}" x2="${x2}" y2="${y}" stroke="${cb}" stroke-width="3" stroke-linecap="round"/>`;
+   n+=`<circle cx="${x1}" cy="${y}" r="${(4+1.8*z).toFixed(1)}" fill="${ca}"/><circle cx="${x2}" cy="${y}" r="${(4-1.8*z).toFixed(1)}" fill="${cb}"/>`}}
+ return `<svg viewBox="0 0 ${w} ${h}" width="100%" height="100%" preserveAspectRatio="xMidYMid meet"><path d="${p2}" fill="none" stroke="#14c8b8" stroke-width="3.5" stroke-linecap="round"/><path d="${p1}" fill="none" stroke="#9a82ff" stroke-width="3.5" stroke-linecap="round"/>${r}${n}</svg>`}
+function paint(){document.querySelectorAll('.dna').forEach(e=>{e.innerHTML=dna(+e.dataset.w,+e.dataset.h,ph)})}
+let last=0;function loop(ts){if(ts-last>45){last=ts;ph+=.08;paint()}requestAnimationFrame(loop)}
+if(!matchMedia('(prefers-reduced-motion:reduce)').matches)requestAnimationFrame(loop);
+async function loadTeams(){const r=await sb.rpc('list_teams');teams=r.data||[];if(cur>=teams.length)cur=0}
+async function loadIdeas(){ideas=[];const t=teams[cur];if(!t)return false;
+ if(session){const r=await sb.from('ideas').select('*').eq('team_id',t.id).order('created_at',{ascending:false});if(r.error)return false;ideas=r.data||[];ok[t.id]=true;return true}
+ if(pass[t.id]===undefined)return false;
+ const r=await sb.rpc('team_ideas',{p_team:t.id,p_pass:pass[t.id]});
+ if(r.error){delete pass[t.id];delete ok[t.id];return false}
+ ideas=r.data||[];ok[t.id]=true;return true}
+async function loadAll(){const r=await sb.from('ideas').select('id,team_id,title,owner_name,file_name,file_path,created_at').order('created_at',{ascending:false});all=r.data||[]}
+const fileUrl=p=>sb.storage.from('files').getPublicUrl(p).data.publicUrl;
+async function login(){const r=await sb.auth.signInWithPassword({email:$('lu').value.trim(),password:$('lp').value});
+ if(r.error){$('le').textContent='البريد أو كلمة المرور غير صحيحة';return}
+ session=r.data.session;await loadIdeas();render()}
+async function logout(){await sb.auth.signOut();session=null;ok={};if(isPath()){location.href='../'}else{location.hash='';render()}}
+async function pick(i){cur=i;try{sessionStorage.setItem('cur',i)}catch(e){}if(location.hash=='#admin')location.hash='';await loadIdeas();render()}
+async function go(id){const i=teams.findIndex(x=>x.id==id);cur=i;try{sessionStorage.setItem('cur',i)}catch(e){}await loadIdeas();if(isPath())location.href='../';else{location.hash='';render()}}
+async function unlock(){const t=teams[cur];pass[t.id]=$('pw').value;if(await loadIdeas())render();else $('er').textContent='كلمة المرور غير صحيحة، حاول مرة أخرى'}
+async function addTeam(){const n=$('nT').value.trim(),p=$('nP').value.trim();if(!n||!p)return;
+ const r=await sb.rpc('admin_add_team',{p_name:n,p_pass:p});if(r.error){toast('تعذّر إنشاء الفريق');return}
+ closeM('mTeam');$('nT').value=$('nP').value='';await loadTeams();cur=teams.length-1;await loadIdeas();render()}
+async function savePw(id){const v=$('pw'+id).value.trim();if(!v)return;const r=await sb.rpc('admin_set_pass',{p_id:id,p_pass:v});toast(r.error?'تعذّر الحفظ':'تم تغيير كلمة المرور')}
+async function delTeam(id){if(teams.length<2)return;const paths=all.filter(x=>x.team_id==id&&x.file_path).map(x=>x.file_path);
+ if(paths.length)await sb.storage.from('files').remove(paths);await sb.from('teams').delete().eq('id',id);cur=0;await loadTeams();await loadIdeas();render()}
+async function delIdea(id){const it=ideas.find(x=>x.id==id);if(it&&it.file_path)await sb.storage.from('files').remove([it.file_path]);await sb.from('ideas').delete().eq('id',id);await loadIdeas();render()}
+async function addIdea(){const t=$('iT').value.trim();if(!t||busy)return;const f=$('iF').files[0],tm=teams[cur];
+ if(f&&f.size>10485760){toast('الملف أكبر من 10 MB');return}
+ busy=true;$('pub').disabled=true;
+ try{let path=null;
+  if(f){path=crypto.randomUUID()+'.'+((f.name.split('.').pop()||'bin').replace(/[^a-z0-9]/gi,'').slice(0,8)||'bin');
+   const u=await sb.storage.from('files').upload(path,f,{contentType:f.type||undefined});if(u.error)throw u.error}
+  const r=await sb.rpc('add_idea',{p_team:tm.id,p_pass:pass[tm.id]||'',p_title:t,p_desc:$('iD').value,p_owner:$('iN').value.trim()||'عضو',p_path:path,p_fname:f?f.name:null,p_fsize:f?f.size:null});
+  if(r.error)throw r.error;
+  closeM('mIdea');$('iT').value=$('iD').value=$('iN').value='';$('iF').value='';$('dz').textContent='⬆ اضغط لرفع ملف (حتى 10 MB)';
+  await loadIdeas();
+ }catch(e){toast('تعذّر النشر، حاول مرة أخرى')}
+ busy=false;$('pub').disabled=false;render()}
+
+function setupHTML(){return `<div class="gate" style="max-width:520px;text-align:start"><h3 style="margin:0">⚙ الإعداد مطلوب</h3><p style="color:var(--mu);margin:0;line-height:1.9">افتح ملف <b>index.html</b> وضع رابط مشروع Supabase والمفتاح العام (anon key) في أول السكربت بدل <code>PASTE_...</code>، ثم احفظ التعديل. هذا الملف الواحد يكفي للأعضاء وللإدارة (صفحة الإدارة على نفس الرابط مع <code>#admin</code> في آخره).</p></div>`}
+function loginHTML(){return `<div class="login"><div class="lside"><div class="dna" data-w="140" data-h="240"></div><div><b style="font-size:19px">scienceteam</b><br><small style="color:#b8c8f0">بوابة الإدارة</small></div></div><div class="lform"><h3 style="margin:0">تسجيل دخول المدير</h3><input id="lu" type="email" placeholder="البريد الإلكتروني" autocomplete="username"><input id="lp" type="password" placeholder="كلمة المرور" autocomplete="current-password" onkeydown="if(event.key=='Enter')login()"><div class="err" id="le"></div><button class="btn p" onclick="login()">دخول</button></div></div>`}
+function panelHTML(){
+ return `<div class="hero"><div><h2>لوحة الإدارة</h2><p>تحكّم كامل في الفرق والأفكار، وأسماء الأصحاب تظهر لك أنت فقط.</p></div><div class="dna" data-w="90" data-h="110"></div></div>
+ <div class="stats"><div class="stat"><b>${teams.length}</b><span>فريق</span></div><div class="stat"><b>${all.length}</b><span>فكرة</span></div><div class="stat"><b>${new Set(all.map(x=>x.owner_name)).size}</b><span>مشارك</span></div></div>
+ <div class="row" style="margin-bottom:8px"><h4 style="margin:0">الفرق وكلمات المرور</h4><button class="btn p" onclick="openM('mTeam')">+ فريق جديد</button></div>
+ <div class="tw"><table><tr><th>الفريق</th><th>كلمة مرور جديدة</th><th>الأفكار</th><th></th></tr>${teams.map(t=>`<tr><td>${esc(t.name)}</td><td><input id="pw${t.id}" placeholder="اكتب كلمة جديدة" style="max-width:160px"></td><td>${all.filter(x=>x.team_id==t.id).length}</td><td><button class="btn" onclick="savePw('${t.id}')">حفظ</button> <button class="btn" onclick="go('${t.id}')">فتح</button> <button class="btn" style="color:#d6336c" onclick="delTeam('${t.id}')">حذف</button></td></tr>`).join('')}</table></div>
+ <h4>كل الأفكار وأصحابها</h4><div class="tw"><table><tr><th>الفكرة</th><th>الفريق</th><th>صاحبها</th><th>الملف</th></tr>${all.map(x=>`<tr><td>${esc(x.title)}</td><td>${esc((teams.find(t=>t.id==x.team_id)||{}).name)}</td><td>${esc(x.owner_name)}</td><td>${esc(x.file_name||'—')}</td></tr>`).join('')}</table></div>`}
+
+async function render(){
+ if(!ready)return;
+ const adm=isAdm();
+ $('app').classList.toggle('adm',adm);
+ $('path').innerHTML=adm?'<b>/admin</b>':'';
+ $('addT').style.display=session?'':'none';
+ $('hbtn').innerHTML=session?(adm?'<button class="btn" onclick="logout()">خروج</button>':'<a class="btn" href="#admin">← لوحة الإدارة</a>'):'';
+ if(adm){$('tName').textContent=session?'لوحة الإدارة':'دخول المدير';$('tState').style.display='none';
+  if(session){await loadAll();$('view').innerHTML=panelHTML()}else $('view').innerHTML=loginHTML();paint();return}
+ $('tState').style.display='';
+ $('teams').innerHTML=teams.map((t,i)=>`<button class="team ${i==cur?'on':''}" onclick="pick(${i})"><span>${esc(t.name)}</span><span>${session||ok[t.id]?'':'🔒'}</span></button>`).join('');
+ if(!teams.length){$('tName').textContent='';$('tState').textContent='';$('view').innerHTML=`<div class="empty">لا توجد فرق بعد. ${session?'أضف أول فريق من لوحة الإدارة.':'سيضيف المدير الفرق قريبًا.'}</div>`;return}
+ const t=teams[cur],a=!!session,open=a||ok[t.id];
+ $('tName').textContent=t.name;$('tState').textContent=open?(a?'مدير':'عضو'):'مقفول 🔒';
+ if(!open){$('view').innerHTML=`<div class="gate"><div class="dna" data-w="90" data-h="120" style="width:90px;height:120px;margin:0 auto"></div><h3 style="margin:0">الدخول إلى «${esc(t.name)}»</h3><p style="color:var(--mu);margin:0">أدخل كلمة مرور الفريق لعرض الأفكار والملفات</p><input id="pw" type="password" placeholder="🔒 كلمة المرور" onkeydown="if(event.key=='Enter')unlock()"><div class="err" id="er"></div><button class="btn p" onclick="unlock()">دخول</button></div>`;paint();return}
+ $('view').innerHTML=`<div class="hero"><div><h2>${esc(t.name)}</h2><p>${a?'أنت ترى اسم صاحب كل ملف، وهذه المعلومة تظهر لك أنت فقط.':'كل أفكار الفريق وملفاته أمامك، وأسماء أصحابها غير ظاهرة.'}</p></div><div class="dna" data-w="90" data-h="110"></div></div>
+ <div class="stats"><div class="stat"><b>${ideas.length}</b><span>فكرة منشورة</span></div><div class="stat"><b>${ideas.filter(i=>i.file_path).length}</b><span>ملف مرفوع</span></div>${a?`<div class="stat"><b>${new Set(ideas.map(i=>i.owner_name)).size}</b><span>مشاركين</span></div>`:''}</div>
+ <div class="bar"><input placeholder="🔍 ابحث في الأفكار والملفات" oninput="flt(this.value)"><button class="btn p" onclick="openM('mIdea')">+ إضافة فكرة</button></div>
+ ${ideas.length?`<div class="grid">${ideas.map((i,k)=>{const x=ext(i.file_name);return `<div class="card" data-q="${esc((i.title+' '+(i.description||'')+' '+(i.file_name||'')).toLowerCase())}" style="border-top-color:${C[k%4]}"><div class="row"><h3>${esc(i.title)}</h3><span class="tag ${a?'own':'hid'}">${a?'👤 '+esc(i.owner_name):'👤 مخفي'}</span></div><p>${esc(i.description)}</p>${i.file_path?`<div class="file"><div class="ico" style="color:${fc(x)}">${esc(x)}</div><div style="flex:1;min-width:0"><div style="overflow:hidden;text-overflow:ellipsis;white-space:nowrap">${esc(i.file_name)}</div><small>${fmt(i.file_size)}</small></div><a class="btn" style="padding:5px 10px" href="${esc(fileUrl(i.file_path))}" target="_blank" rel="noopener" download>⬇</a></div>`:''}${a?`<button class="btn" style="color:#d6336c" onclick="delIdea('${i.id}')">🗑 حذف الفكرة</button>`:''}</div>`}).join('')}</div>`:'<div class="empty">لا توجد أفكار بعد، كن أول من يشارك!</div>'}`;
+ paint()}
+function flt(v){v=v.trim().toLowerCase();document.querySelectorAll('.card[data-q]').forEach(c=>c.style.display=c.dataset.q.includes(v)?'':'none')}
+
+async function boot(){
+ const ok0=!SUPABASE_URL.startsWith('PASTE')&&window.supabase;
+ ready=true;
+ if(!ok0){$('view').innerHTML=setupHTML();return}
+ $('view').innerHTML='<div class="empty">جارٍ التحميل…</div>';
+ try{sb=supabase.createClient(SUPABASE_URL,SUPABASE_ANON_KEY);
+  const s=await sb.auth.getSession();session=s.data.session;
+  sb.auth.onAuthStateChange((_e,x)=>{session=x})
+  $('dbTag').textContent='☁ قاعدة سحابية';
+  try{cur=+sessionStorage.getItem('cur')||0}catch(e){}
+  await loadTeams();await loadIdeas();render()
+ }catch(e){$('view').innerHTML='<div class="empty">تعذّر الاتصال بقاعدة البيانات. تأكد من الإعدادات.</div>'}}
+window.addEventListener('hashchange',async()=>{if(sb){await loadIdeas();render()}});
+boot();
+
+</script>
+</body>
+</html>
